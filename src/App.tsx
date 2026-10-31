@@ -12,43 +12,49 @@ import { Footer } from './components/Footer';
 
 export default function App() {
   const [isProofModalOpen, setIsProofModalOpen] = useState(false);
+  const [modalMode, setModalMode] = useState<'apply' | 'message'>('apply');
   const [isBlueprintModalOpen, setIsBlueprintModalOpen] = useState(false);
+
+  const handleOpenModal = (mode: 'apply' | 'message' = 'apply') => {
+    setModalMode(mode);
+    setIsProofModalOpen(true);
+  };
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col font-sans selection:bg-amber-400 selection:text-slate-950">
       {/* Top Bar with Top Bar Contract */}
       <Navbar
-        onOpenProofModal={() => setIsProofModalOpen(true)}
+        onOpenProofModal={handleOpenModal}
         onOpenBlueprintModal={() => setIsBlueprintModalOpen(true)}
       />
 
       {/* Main Content Flow */}
       <main className="flex-1">
         <Hero
-          onOpenProofModal={() => setIsProofModalOpen(true)}
+          onOpenProofModal={handleOpenModal}
           onOpenBlueprintModal={() => setIsBlueprintModalOpen(true)}
         />
 
         <StrategyComparison
-          onOpenProofModal={() => setIsProofModalOpen(true)}
+          onOpenProofModal={() => handleOpenModal('apply')}
         />
 
         <WhyPerformance />
 
         <ProcessTimeline
-          onOpenProofModal={() => setIsProofModalOpen(true)}
+          onOpenProofModal={() => handleOpenModal('apply')}
         />
 
         <GoldenRule />
 
         <ServicesOverview
-          onOpenProofModal={() => setIsProofModalOpen(true)}
+          onOpenProofModal={() => handleOpenModal('message')}
         />
       </main>
 
       {/* Footer */}
       <Footer
-        onOpenProofModal={() => setIsProofModalOpen(true)}
+        onOpenProofModal={handleOpenModal}
         onOpenBlueprintModal={() => setIsBlueprintModalOpen(true)}
       />
 
@@ -60,6 +66,7 @@ export default function App() {
 
       <ProofClientModal
         isOpen={isProofModalOpen}
+        initialMode={modalMode}
         onClose={() => setIsProofModalOpen(false)}
       />
     </div>

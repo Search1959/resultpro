@@ -2,7 +2,7 @@ import React from 'react';
 
 interface FooterProps {
   onOpenBlueprintModal: () => void;
-  onOpenProofModal: () => void;
+  onOpenProofModal: (mode?: 'apply' | 'message') => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({
@@ -42,6 +42,12 @@ export const Footer: React.FC<FooterProps> = ({
             <a href="#services" className="hover:text-white transition-colors">
               Services
             </a>
+            <button
+              onClick={() => onOpenProofModal('message')}
+              className="text-slate-300 hover:text-white transition-colors cursor-pointer"
+            >
+              Send Message
+            </button>
             <button
               onClick={onOpenBlueprintModal}
               className="text-amber-400 hover:text-amber-300 transition-colors cursor-pointer"

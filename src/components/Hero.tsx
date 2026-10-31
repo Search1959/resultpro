@@ -2,7 +2,7 @@ import React from 'react';
 import { ArrowRight, Eye, ShieldCheck, TrendingUp, Sparkles } from 'lucide-react';
 
 interface HeroProps {
-  onOpenProofModal: () => void;
+  onOpenProofModal: (mode?: 'apply' | 'message') => void;
   onOpenBlueprintModal: () => void;
 }
 
@@ -56,7 +56,7 @@ export const Hero: React.FC<HeroProps> = ({
           {/* Action CTAs */}
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <button
-              onClick={onOpenProofModal}
+              onClick={() => onOpenProofModal('apply')}
               className="px-6 py-3.5 text-sm sm:text-base font-semibold text-slate-950 bg-amber-400 hover:bg-amber-300 active:bg-amber-500 rounded-lg transition-all shadow-md shadow-amber-950/30 flex items-center gap-2 group cursor-pointer"
             >
               <span>Apply as Proof Client</span>
@@ -64,11 +64,18 @@ export const Hero: React.FC<HeroProps> = ({
             </button>
 
             <button
-              onClick={onOpenBlueprintModal}
+              onClick={() => onOpenProofModal('message')}
               className="px-5 py-3.5 text-sm sm:text-base font-medium text-slate-200 bg-slate-900/80 hover:bg-slate-800 border border-slate-700 hover:border-slate-600 rounded-lg transition-all flex items-center gap-2.5 cursor-pointer"
             >
+              <span>Send Message</span>
+            </button>
+
+            <button
+              onClick={onOpenBlueprintModal}
+              className="text-xs sm:text-sm font-medium text-slate-400 hover:text-amber-400 transition-colors flex items-center gap-1.5 px-3 py-2 cursor-pointer"
+            >
               <Eye className="w-4 h-4 text-amber-400" />
-              <span>Inspect Strategy Blueprint</span>
+              <span>Inspect Blueprint</span>
             </button>
           </div>
         </div>

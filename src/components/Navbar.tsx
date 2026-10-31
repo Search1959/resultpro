@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface NavbarProps {
-  onOpenProofModal: () => void;
+  onOpenProofModal: (mode?: 'apply' | 'message') => void;
   onOpenBlueprintModal: () => void;
 }
 
@@ -47,17 +47,17 @@ export const Navbar: React.FC<NavbarProps> = ({
             Services
           </a>
           <button
-            onClick={onOpenBlueprintModal}
-            className="hover:text-amber-400 transition-colors whitespace-nowrap shrink-0 cursor-pointer text-left"
+            onClick={() => onOpenProofModal('message')}
+            className="hover:text-white transition-colors whitespace-nowrap shrink-0 cursor-pointer text-left"
           >
-            Blueprint
+            Send Message
           </button>
         </nav>
 
         {/* Zone 3: 1 primary action */}
         <div className="flex items-center gap-3 shrink-0">
           <button
-            onClick={onOpenProofModal}
+            onClick={() => onOpenProofModal('apply')}
             className="px-4 py-2 text-xs sm:text-sm font-semibold text-slate-950 bg-amber-400 hover:bg-amber-300 active:bg-amber-500 rounded-lg transition-colors whitespace-nowrap shrink-0 shadow-sm shadow-amber-950/20 cursor-pointer"
           >
             Apply as Proof Client
