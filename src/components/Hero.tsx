@@ -12,7 +12,7 @@ export const Hero: React.FC<HeroProps> = ({
   onOpenBlueprintModal,
 }) => {
   const [isPortfolioZoomed, setIsPortfolioZoomed] = useState(false);
-  const portfolioUrl = 'https://deinrimapp.in/admin/index.php?p=websites';
+  const portfolioUrl = 'https://deinrimapp.in/directory/index.php';
 
   return (
     <section className="relative overflow-hidden bg-[#0A192F] text-white pt-3 sm:pt-4 pb-14 sm:pb-16 border-b border-slate-800">
