@@ -1,4 +1,5 @@
 import React from 'react';
+import { Logo } from './Logo';
 
 interface FooterProps {
   onOpenBlueprintModal: () => void;
@@ -14,10 +15,8 @@ export const Footer: React.FC<FooterProps> = ({
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-10 border-b border-slate-800">
           <div>
-            <div className="text-xl font-bold text-white tracking-tight flex items-center gap-2">
-              Apex7tech
-            </div>
-            <div className="mt-1 text-sm text-slate-400 flex items-center gap-2">
+            <Logo size="md" />
+            <div className="mt-3 text-sm text-slate-400 flex items-center gap-2">
               <span>Web</span>
               <span className="text-slate-600">·</span>
               <span>Apps</span>

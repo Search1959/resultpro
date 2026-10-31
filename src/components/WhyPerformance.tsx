@@ -208,6 +208,13 @@ export const WhyPerformance: React.FC = () => {
               <div className="text-xs text-slate-300 mt-1">
                 Uniform brand identity across every touchpoint
               </div>
+              <a
+                href="#brand-card"
+                onClick={(e) => e.stopPropagation()}
+                className="inline-block mt-2 text-[11px] text-amber-400 hover:text-amber-300 font-semibold underline underline-offset-2"
+              >
+                View official brand card ↓
+              </a>
             </button>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Logo } from './Logo';
 
 interface NavbarProps {
   onOpenProofModal: (mode?: 'apply' | 'message') => void;
@@ -12,12 +13,13 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <header className="sticky top-0 z-40 bg-slate-950/90 backdrop-blur-md border-b border-slate-800 transition-colors">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-8">
-        {/* Zone 1: Brand title wordmark */}
+        {/* Zone 1: Official Brand Logo with Chevron Mark */}
         <a
           href="#"
-          className="text-xl font-bold tracking-tight text-white hover:text-amber-400 transition-colors whitespace-nowrap shrink-0 flex items-center gap-2"
+          className="whitespace-nowrap shrink-0 hover:opacity-95 transition-opacity"
+          aria-label="Apex7tech Home"
         >
-          Apex7tech
+          <Logo size="sm" showTagline={false} />
         </a>
 
         {/* Zone 2: 4-5 single-line clean navigation links */}
@@ -45,6 +47,12 @@ export const Navbar: React.FC<NavbarProps> = ({
             className="hover:text-white transition-colors whitespace-nowrap shrink-0"
           >
             Services
+          </a>
+          <a
+            href="#brand-card"
+            className="hover:text-white transition-colors whitespace-nowrap shrink-0"
+          >
+            Digital Pass
           </a>
           <button
             onClick={() => onOpenProofModal('message')}

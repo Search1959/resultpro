@@ -3,6 +3,7 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { StrategyComparison } from './components/StrategyComparison';
 import { WhyPerformance } from './components/WhyPerformance';
+import { BrandCard } from './components/BrandCard';
 import { ProcessTimeline } from './components/ProcessTimeline';
 import { GoldenRule } from './components/GoldenRule';
 import { ServicesOverview } from './components/ServicesOverview';
@@ -40,6 +41,11 @@ export default function App() {
         />
 
         <WhyPerformance />
+
+        {/* Official Brand Identity Card & Mission Showcase */}
+        <BrandCard
+          onOpenProofModal={handleOpenModal}
+        />
 
         <ProcessTimeline
           onOpenProofModal={() => handleOpenModal('apply')}

@@ -23,6 +23,16 @@ export const Hero: React.FC<HeroProps> = ({
         {/* Top Kicker Bar exactly matching image */}
         <div className="flex flex-wrap items-center justify-between gap-4 pb-10 border-b border-slate-800/80 text-xs sm:text-sm font-semibold tracking-wider text-amber-400 uppercase">
           <div className="flex items-center gap-2">
+            <svg
+              viewBox="0 0 100 100"
+              className="w-4 h-4 shrink-0"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path d="M 12 28 L 62 28 L 22 88 L 6 88 L 42 38 L 12 38 Z" fill="#F59E0B" />
+              <path d="M 68 36 L 86 88 L 70 88 L 56 46 Z" fill="#FFFFFF" />
+            </svg>
             <span className="text-amber-400">APEX7TECH</span>
             <span className="text-slate-600">·</span>
             <span className="text-slate-300">GROWTH STRATEGY</span>
