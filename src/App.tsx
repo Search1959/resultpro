@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { StrategyComparison } from './components/StrategyComparison';
+import { FlagshipProducts } from './components/FlagshipProducts';
 import { WhyPerformance } from './components/WhyPerformance';
 import { BrandCard } from './components/BrandCard';
 import { ProcessTimeline } from './components/ProcessTimeline';
@@ -38,6 +39,11 @@ export default function App() {
 
         <StrategyComparison
           onOpenProofModal={() => handleOpenModal('apply')}
+        />
+
+        {/* Flagship Products Showcase: Both Campaign Posters Side-by-Side */}
+        <FlagshipProducts
+          onOpenProofModal={handleOpenModal}
         />
 
         <WhyPerformance />

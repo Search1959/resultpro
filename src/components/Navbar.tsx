@@ -31,6 +31,12 @@ export const Navbar: React.FC<NavbarProps> = ({
             Strategy
           </a>
           <a
+            href="#flagship-products"
+            className="hover:text-amber-400 font-semibold transition-colors whitespace-nowrap shrink-0"
+          >
+            Products
+          </a>
+          <a
             href="#philosophy"
             className="hover:text-white transition-colors whitespace-nowrap shrink-0"
           >
